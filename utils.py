@@ -18,3 +18,12 @@ def get_input_list_from_day(day_number: Union[int, str], as_type: type = str) ->
     input_filepath = get_input_filepath(day_number)
     input_list = read_input_list_from_path(input_filepath, as_type=as_type)
     return input_list
+
+
+def convert_list_to_type(list_to_convert: list[Any], as_type: type = int) -> Any:
+    return [as_type(elem) for elem in list_to_convert]
+
+
+def read_numbers_line(line_str: str) -> list[int]:
+    line_list = line_str.split(',')
+    return convert_list_to_type(line_list, int)
