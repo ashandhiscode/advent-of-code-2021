@@ -27,3 +27,17 @@ def convert_list_to_type(list_to_convert: list[Any], as_type: type = int) -> Any
 def read_numbers_line(line_str: str) -> list[int]:
     line_list = line_str.split(',')
     return convert_list_to_type(line_list, int)
+
+
+def sum_numbers_from_1_to(n):
+    return int(n * (n + 1) / 2)
+
+
+def function(series):
+    max_num = series.max()
+    totals = series.copy()
+    i = max_num
+    while i > 0:
+        totals += i * (i < series)
+        i -= 1
+    return totals
