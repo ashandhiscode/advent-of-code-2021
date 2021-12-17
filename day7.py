@@ -23,6 +23,7 @@ if __name__ == "__main__":
     crab_coordinates = pd.Series(input_list)
     best_position, min_fuel = find_best_midpoint_with_min_fuel(crab_coordinates)
     print(f"Part 1: the optimal position is {best_position}, with total fuel {min_fuel} consumed.")
+    # the median and mean minimise these properties - can we prove that?
     best_position, min_fuel = find_best_midpoint_with_min_fuel(
         crab_coordinates,
         fuel_function=lambda n: sum_numbers_from_1_to(n)
